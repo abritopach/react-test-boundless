@@ -62,23 +62,26 @@ class App extends Component {
                     <h2>Welcome to React</h2>
                 </div>
                 <p className="App-intro">
-                    To get started, edit <code>src/App.js</code> and save to reload.
+                    To get started, use the tab key to move to the item and then use the arrows keys (left and right).
                 </p>
                 <div>
+                    <h2>ArrowKeyNavigation Horizontal Mode Only</h2>
                     <section>
-                    <h6>Horizontal-only</h6>
-                    <ArrowKeyNavigation mode={ArrowKeyNavigation.mode.HORIZONTAL}>
-                        {this.state.items.map((item) => <span key={item}>{item}</span>)}
-                    </ArrowKeyNavigation>
+                        <ArrowKeyNavigation mode={ArrowKeyNavigation.mode.HORIZONTAL}>
+                            {this.state.items.map((item) => <span key={item}>{item}</span>)}
+                        </ArrowKeyNavigation>
+                    </section>
+                    <br></br>
+                    <section>
+                        <ArrowKeyNavigation mode={ArrowKeyNavigation.mode.HORIZONTAL} className="video-thumbnail">
+                            {videos.map((video, i) => (
+                                <div key={i}>
+                                    <video src={video.mediaUrl} poster={video.imageUrl} alt={video.description} />
+                                </div>
+                            ))}
+                        </ArrowKeyNavigation>
                     </section>
                 </div>
-                    <ArrowKeyNavigation mode={ArrowKeyNavigation.mode.HORIZONTAL} className="video-thumbnail">
-                    {videos.map((video, i) => (
-                        <div key={i}>
-                            <video src={video.mediaUrl} poster={video.imageUrl} alt={video.description} />
-                        </div>
-                    ))}
-                    </ArrowKeyNavigation>
             </div>
         );
     }
