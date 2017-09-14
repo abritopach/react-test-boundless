@@ -11,6 +11,50 @@ class App extends Component {
     }
 
     render() {
+
+        const videos = [
+            {title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                mediaUrl: "http://techslides.com/demos/sample-videos/small.mp4",
+                imageUrl: "http://lorempixel.com/214/317/?t=1"
+            },
+            {title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                mediaUrl: "http://techslides.com/demos/sample-videos/small.mp4",
+                imageUrl: "http://lorempixel.com/214/317/?t=2"
+            },
+            {title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                mediaUrl: "http://techslides.com/demos/sample-videos/small.mp4",
+                imageUrl: "http://lorempixel.com/214/317/?t=3"
+            },
+            {title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                mediaUrl: "http://techslides.com/demos/sample-videos/small.mp4",
+                imageUrl: "http://lorempixel.com/214/317/?t=4"
+            },
+            {title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                mediaUrl: "http://techslides.com/demos/sample-videos/small.mp4",
+                imageUrl: "http://lorempixel.com/214/317/?t=5"
+            },
+            {title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                mediaUrl: "http://techslides.com/demos/sample-videos/small.mp4",
+                imageUrl: "http://lorempixel.com/214/317/?t=6"
+            },
+            {title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                mediaUrl: "http://techslides.com/demos/sample-videos/small.mp4",
+                imageUrl: "http://lorempixel.com/214/317/?t=7"
+            },
+            {title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                mediaUrl: "http://techslides.com/demos/sample-videos/small.mp4",
+                imageUrl: "http://lorempixel.com/214/317/?t=8"
+            }
+        ]
+
         return (
             <div className="App">
                 <div className="App-header">
@@ -23,11 +67,18 @@ class App extends Component {
                 <div>
                     <section>
                     <h6>Horizontal-only</h6>
-                    <ArrowKeyNavigation className='demo-loose-list' mode={ArrowKeyNavigation.mode.HORIZONTAL}>
+                    <ArrowKeyNavigation mode={ArrowKeyNavigation.mode.HORIZONTAL}>
                         {this.state.items.map((item) => <span key={item}>{item}</span>)}
                     </ArrowKeyNavigation>
                     </section>
                 </div>
+                    <ArrowKeyNavigation mode={ArrowKeyNavigation.mode.HORIZONTAL} className="video-thumbnail">
+                    {videos.map((video, i) => (
+                        <div key={i}>
+                            <video src={video.mediaUrl} poster={video.imageUrl} alt={video.description} />
+                        </div>
+                    ))}
+                    </ArrowKeyNavigation>
             </div>
         );
     }

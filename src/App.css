@@ -22,3 +22,22 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.video-thumbnail {
+  display: flex;
+  justify-content: space-between;
+  overflow: auto;
+  overflow-y: hidden;
+}
+
+.video-thumbnail video {
+  width: 214px;
+  height: 317px;
+  padding: 2px;
+  //border: 1px solid grey;
+}
+
+.video-thumbnail div:focus {
+  outline: none;
+  background-color: #6dbbff;
+}
